@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Music Player</title>
+    <link rel="stylesheet" href="css/admin-style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>🎵 Admin Panel</h1>
+            <!-- REMOVED: View Music Player button -->
+        </div>
+        
+        <div class="upload-section">
+            <h2>Upload New Song</h2>
+            <input type="text" id="songTitle" placeholder="Song Title">
+            <input type="text" id="artistName" placeholder="Artist Name">
+            <input type="file" id="songFile" accept="audio/*">
+            <div id="uploadProgress" class="progress-bar" style="display: none;">
+                <div class="progress-fill"></div>
+            </div>
+            <button onclick="uploadSong()" class="upload-btn">📤 Upload Song</button>
+        </div>
+        
+        <div class="manage-section">
+            <h2>Manage Songs (Global Library)</h2>
+            <p class="info-text">⚠️ These songs will be available to ALL users</p>
+            <div id="songsList" class="admin-songs-list"></div>
+        </div>
+    </div>
+    
+    <script src="js/admin.js"></script>
+</body>
+</html>

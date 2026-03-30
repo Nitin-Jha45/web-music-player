@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="css/indexstyle.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎵 Music Player</h1>
+        </div>
+        
+        <div class="nav-buttons">
+            <button class="nav-btn" onclick="showSection('home')">🏠 Home</button>
+            <button class="nav-btn" onclick="showSection('search')">🔍 Search</button>
+            <button class="nav-btn" onclick="showSection('library')">📚 Library</button>
+        </div>
+        
+        <div class="search-box" id="searchBox">
+            <input type="text" id="searchInput" placeholder="Search songs by title or artist...">
+        </div>
+        
+        <!-- Home/All Songs Section -->
+        <div id="homeSection" class="songs-section">
+            <div id="songList" class="song-list"></div>
+        </div>
+        
+        <!-- Library/Playlists Section -->
+        <div id="librarySection" class="playlist-main-section" style="display: none;">
+            <div class="create-playlist-section">
+                <h3>Create New Playlist</h3>
+                <div class="create-playlist-form">
+                    <input type="text" id="playlistName" placeholder="Enter playlist name">
+                    <button id="createPlaylistBtn" class="create-playlist-btn">➕ Create Playlist</button>
+                </div>
+            </div>
+            
+            <div class="my-playlists-section">
+                <h3>My Playlists</h3>
+                <div id="playlistContainer" class="playlists-grid"></div>
+            </div>
+            
+            <div id="playlistView" class="playlist-view" style="display: none;">
+                <button class="back-btn" onclick="backToPlaylists()">← Back to Playlists</button>
+                <h3 id="playlistNameDisplay"></h3>
+                <div id="playlistSongsList" class="playlist-songs-list"></div>
+            </div>
+        </div>
+        
+        <div class="player-controls">
+            <div id="nowPlaying" class="now-playing">🎵 Select a song to play</div>
+            <audio id="audioPlayer" controls>
+                <source src="">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="control-buttons">
+                <button class="control-btn" id="prevBtn">⏮ Previous</button>
+                <button class="control-btn" id="nextBtn">⏭ Next</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/player.js"></script>
+</body>
+</html>
